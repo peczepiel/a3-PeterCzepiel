@@ -1,5 +1,4 @@
-# Copy to .env and fill values
 PORT=3000
-mongodb+srv://peter123:peter123@a3peterczepiel.klpvcd3.mongodb.net/?retryWrites=true&w=majority&appName=a3PeterCzepiel
+MONGODB_URI=mongodb+srv://peter123:peter123@a3peterczepiel.klpvcd3.mongodb.net/?retryWrites=true&w=majority&appName=a3PeterCzepiel
 SESSION_SECRET=kjh34kjh2!@!dskjf983
 NODE_ENV=development
