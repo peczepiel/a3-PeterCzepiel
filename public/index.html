@@ -15,6 +15,7 @@
     <script src="js/main.js" defer></script>
   </head>
   <body class="bg-dark text-light">
+    <a class="skip-link visually-hidden-focusable" href="#mainContent">Skip to main content</a>
     <header class="container py-4">
       <div class="d-flex align-items-center justify-content-between">
         <h1 class="h3 mb-0">Click Game</h1>
@@ -37,9 +38,9 @@
 
               <form id="loginForm" class="mb-3" aria-labelledby="loginHeading">
                 <label for="loginUsername" class="form-label">Email</label>
-                <input id="loginUsername" class="form-control" type="email" required aria-required="true" />
+                <input id="loginUsername" class="form-control" type="email" required aria-required="true" autocomplete="email" />
                 <label for="loginPassword" class="form-label mt-2">Password</label>
-                <input id="loginPassword" class="form-control" type="password" required aria-required="true" minlength="6" />
+                <input id="loginPassword" class="form-control" type="password" required aria-required="true" minlength="6" autocomplete="current-password" />
                 <div class="mt-3 d-flex gap-2">
                   <button type="submit" class="btn btn-primary">Login</button>
                   <button id="showRegister" type="button" class="btn btn-outline-light">Register</button>
@@ -49,9 +50,9 @@
 
               <form id="registerForm" class="mb-0 d-none" aria-hidden="true">
                 <label for="registerUsername" class="form-label">Email</label>
-                <input id="registerUsername" class="form-control" type="email" required aria-required="true" />
+                <input id="registerUsername" class="form-control" type="email" required aria-required="true" autocomplete="email" />
                 <label for="registerPassword" class="form-label mt-2">Password</label>
-                <input id="registerPassword" class="form-control" type="password" required aria-required="true" minlength="6" />
+                <input id="registerPassword" class="form-control" type="password" required aria-required="true" minlength="6" autocomplete="new-password" />
                 <div class="mt-3 d-flex gap-2">
                   <button id="registerSubmit" type="submit" class="btn btn-success">Register & Sign in</button>
                   <button id="cancelRegister" type="button" class="btn btn-outline-light">Cancel</button>
@@ -72,14 +73,14 @@
                 <label for="yourname" class="form-label">Run label (what do you want to call this attempt?)</label>
                 <input type="text" id="yourname" class="form-control" placeholder="e.g., 'afternoon run'" required />
                 <div class="mt-3">
-                  <button type="submit" class="btn btn-warning">Start Game</button>
+                  <button type="submit" class="btn btn-warning" aria-label="Start game">Start Game</button>
                 </div>
               </form>
 
               <div id="gameArea" class="hidden" aria-hidden="true">
                 <p id="timer" class="mb-1" aria-live="polite">Time left: 10</p>
                 <p id="clickCountDisplay" class="mb-2">Clicks: 0</p>
-                <button id="clickButton" class="click-box btn" aria-pressed="false">CLICK ME!</button>
+                <button id="clickButton" class="click-box btn" aria-pressed="false" aria-label="Click target — press repeatedly to increase your score">CLICK ME!</button>
               </div>
 
               <div id="gameMessage" role="status" aria-live="polite" class="mt-2"></div>

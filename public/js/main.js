@@ -124,6 +124,11 @@ function startGame(e) {
   $('#timer').textContent = `Time left: ${timer}`;
   $('#gameMessage').textContent = '';
 
+  const clickBtn = $('#clickButton');
+  clickBtn.disabled = false;
+  clickBtn.setAttribute('aria-disabled', 'false');
+  clickBtn.focus();
+
   timerInterval = setInterval(() => {
     timer--;
     $('#timer').textContent = `Time left: ${timer}`;
@@ -137,6 +142,13 @@ function registerClick() {
   $('#clickCountDisplay').textContent = `Clicks: ${clicks}`;
 }
 
+$('#clickButton').addEventListener('keydown', (e) => {
+  if (e.key === ' ' || e.key === 'Enter') {
+    e.preventDefault();
+    $('#clickButton').click();
+  }
+});
+
 async function endGame(labelFromStart) {
   clearInterval(timerInterval);
   gameActive = false;
@@ -145,7 +157,11 @@ async function endGame(labelFromStart) {
   $('#nameForm').classList.remove('hidden');
   $('#gameArea').setAttribute('aria-hidden', 'true');
 
-  const totalTime = 10; // fixed at 10 secnds
+  const clickBtn = $('#clickButton');
+  clickBtn.disabled = true;
+  clickBtn.setAttribute('aria-disabled', 'true');
+
+  const totalTime = 10;
   const cps = (clicks / totalTime) || 0;
 
   $('#gameMessage').textContent = `Run complete — score ${clicks} (${cps.toFixed(2)} clicks/sec). Saving...`;

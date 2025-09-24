@@ -9,6 +9,26 @@ h1, h2 {
 .hidden {
   display: none !important;
 }
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.visually-hidden-focusable:focus,
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  left: 0;
+  background: #ffcc00;
+  color: #000;
+  padding: 8px 12px;
+  z-index: 1000;
+  border-radius: 4px;
+}
 
 #gameArea {
   display: flex;
@@ -29,6 +49,10 @@ h1, h2 {
   align-items: center;
   border: none;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.click-box:focus {
+  outline: 4px solid #ffcc00;
+  outline-offset: 2px;
 }
 
 .click-box:active,
